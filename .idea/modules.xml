@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BrewDawg.iml" filepath="$PROJECT_DIR$/BrewDawg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BrewDawg/BrewDawg-BrewDawg.iml" filepath="$PROJECT_DIR$/BrewDawg/BrewDawg-BrewDawg.iml" />
+    </modules>
+  </component>
+</project>
+
