@@ -1,5 +1,6 @@
 package com.ling.brewdawg;
 
+import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
@@ -14,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.os.Handler;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,6 +24,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class Playground2 extends ActionBarActivity {
 
@@ -31,6 +35,7 @@ public class Playground2 extends ActionBarActivity {
 
     private TextView beerText;
     private TextView beerProgressText;
+    private EditText DateEditText;
 
     // Datoer
 
@@ -40,6 +45,33 @@ public class Playground2 extends ActionBarActivity {
     Calendar dateNow;
 
 
+    // Ny kalender hvor vi kan sette inn plukket dato
+    Calendar myCalendar = Calendar.getInstance();
+
+
+    // Hva gjøres med datoen som ble valgt. Oppdater Calendar.
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateDateTextField();
+        }
+
+    };
+
+    // Oppdater tekstfeltet med verdi satt i kalender
+    private void updateDateTextField() {
+
+        String myFormat = "dd-MMMM-yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
+
+        DateEditText.setText(sdf.format(myCalendar.getTime()));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +83,21 @@ public class Playground2 extends ActionBarActivity {
         beerText = (TextView) findViewById(R.id.beerDescription);
         beerProgressText = (TextView) findViewById(R.id.beerProgressText);
         beerProgressbar = (ProgressBar) findViewById(R.id.beerProgressBar);
+        DateEditText = (EditText) findViewById(R.id.DateEditText);
+
+
+        // Klikk inne i tekstboks, fyr opp en datepicker.
+
+        DateEditText.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                new DatePickerDialog(Playground2.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
 
 
         beerText.setText("Pale Ale Test");
