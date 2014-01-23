@@ -1,6 +1,7 @@
 package com.ling.brewdawg;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -34,10 +35,11 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // A change!
 
-        // Lots of important comments!
+        // ugh, så mye autogenerert kode. clean slate plz.
 
+        Intent i = new Intent(this, Playground2.class);
+        startActivity(i);
 
         super.onCreate(savedInstanceState);
 

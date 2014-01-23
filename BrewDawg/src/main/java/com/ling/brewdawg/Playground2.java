@@ -1,5 +1,6 @@
 package com.ling.brewdawg;
 
+import android.app.DialogFragment;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -61,7 +62,7 @@ public class Playground2 extends ActionBarActivity {
         dateBrewStart.add(Calendar.MINUTE, -1);
 
         dateBrewEnd = Calendar.getInstance();
-        //dateBrewEnd.add(Calendar.DATE, 1);
+        //dateBrewEnd.add(Calendar.DATE, 1); // days
         dateBrewEnd.add(Calendar.MINUTE, 2);
 
         dateNow = Calendar.getInstance();
@@ -101,11 +102,7 @@ public class Playground2 extends ActionBarActivity {
             }
         }.start();
 
-        // oppdaterer progressbar
-
-
-
-        // </ progress
+        // end ling
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -113,6 +110,10 @@ public class Playground2 extends ActionBarActivity {
                     .commit();
         }
     }
+
+    // ling
+
+
 
 
     @Override
@@ -152,3 +153,5 @@ public class Playground2 extends ActionBarActivity {
     }
 
 }
+
+

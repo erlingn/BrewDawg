@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ling.brewdawg.Playground2"
+    tools:ignore="MergeRootFrame" >
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="201dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/beerProgressBar"
+        android:layout_below="@+id/beerProgressText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/beerProgressText"
+        android:layout_below="@+id/beerDescription"
+        android:layout_alignLeft="@+id/beerDescription"
+        android:layout_alignStart="@+id/beerDescription"
+        android:layout_marginTop="146dp"
+        android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/beerDescription"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|top" />
+
+</FrameLayout>
